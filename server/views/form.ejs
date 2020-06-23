@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <style>
+
+
+h3 {
+  font-family: 'Oswald', sans-serif;
+  font-weight:normal;
+  font-size:40px;
+  color:#34495e;
+  text-align:center;
+  margin:0 auto 30px 0;
+}
+
+h3:first-letter {
+  color:#e74c3c;
+  border-bottom:1px solid #e74c3c;
+}
+
+h5 {
+  font-family: 'Oswald', sans-serif;
+  text-align:center;
+}
+
+.movingCar {
+  width: auto; 
+  height: auto;
+  max-width: 100px;
+  max-height: 100px;
+  display : block ;
+  margin : 0 auto ;
+}
+
+.form {
+  width: 400px;
+  height: 320px;
+  background: #edeff1;
+  margin: 0px auto;
+  padding-top: 20px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+input[type="text"] {
+  display: block;
+  width: 309px;
+  height: 35px;
+  margin: 15px auto;
+  background: #fff;
+  border: 0px;
+  padding: 5px;
+  font-size: 16px;
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+input[type="submit"] {
+  display: block;
+  background: #1abc9d;
+  width: 314px;
+  padding: 12px;
+  cursor: pointer;
+  color: #fff;
+  border: 0px;
+  margin: auto ;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background: #09cca6
+}
+
+a{
+  text-align: center;
+  font-family: Arial;
+  color: gray;
+  display: block;
+  margin: 15px auto;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 12px;
+}
+
+a:hover {
+  color: #1abc9d;
+}
+
+
+::-webkit-input-placeholder {
+  color: gray;
+}
+
+:-moz-placeholder { 
+  color: gray;  
+}
+
+::-moz-placeholder { 
+  color: gray;  
+}
+
+:-ms-input-placeholder {  
+  color: gray;  
+}
+
+
+    </style>
+  </head>
+  <body>
+    <h3><%= title %></h3>
+      <div class="form">
+        <form action="<%= action %>" method="<%= method %>">
+          <input type="text" name="number" placeholder="Enter your car number" required/>
+          <input type="submit" value="<%= submit %>" />
+        </form>
+        <div class="img-div">
+          <h5>↓ Click! ↓</h5>
+          <img src="/movingCar.gif" onclick="location.href='http://localhost:3001'" class="movingCar">
+        </div>
+      </div>
+  </body>
+</html>

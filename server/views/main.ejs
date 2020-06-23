@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>주차장입니당</title>
+    <style>
+
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+}
+
+#container {
+  width:715px;
+  height:230px;
+  margin:50px auto;
+}
+
+.button {
+  width:140px;
+  height:50px;
+  border:2px solid #34495e;
+  border-radius: 10px;
+  float:left;
+  text-align:center;
+  cursor:pointer;
+  position:relative;
+  box-sizing:border-box;
+  overflow:hidden;
+  margin:0 10px 40px 25px;
+}
+
+.button a {
+  font-family:arial;
+  font-size:16px;
+  color:#34495e;
+  text-decoration:none;
+  line-height:50px;
+  transition:all .5s ease;
+  z-index:2;
+  position:relative;
+}
+
+.eff {
+  width:140px;
+  height:50px;
+  top:-50px;
+  background:#34495e;
+  position:absolute;
+  transition:all .5s ease;
+  z-index:1;
+}
+
+.button:hover .eff {
+  top:0;
+}
+
+.button:hover a {
+  color:#fff;
+}
+
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-weight:normal;
+  font-size:40px;
+  color:#34495e;
+  text-align:center;
+  margin:0 auto 30px 0;
+}
+
+h1:first-letter {
+  color:#e74c3c;
+  border-bottom:1px solid #e74c3c;
+}
+
+.movingCar {
+  width: auto; 
+  height: auto;
+  max-width: 400px;
+  max-height: 400px;
+  display : block ;
+  margin : 0 auto ;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Let's Parking!</h1>
+      <div class="button">
+        <div class="eff" onclick="location.href='http://localhost:3001/in'"></div>
+        <a href="http://localhost:3001/in"> IN </a>
+      </div>
+      <div class="button">
+        <div class="eff" onclick="location.href='http://localhost:3001/out'"></div>
+        <a href="http://localhost:3001/out"> PAY </a>
+      </div>
+      <div class="button">
+        <div class="eff" onclick="location.href='http://localhost:3001/check'"></div>
+        <a href="http://localhost:3001/check"> OUT </a>
+      </div>
+      <div class="button">
+        <div class="eff" onclick="location.href='http://localhost:3001/ticket'"></div>
+        <a href="http://localhost:3001/ticket"> BUY </a>
+      </div>
+      <div>
+        <img src="/movingCar.gif" class="movingCar" alt="">
+      </div>
+  </body>
+</html>

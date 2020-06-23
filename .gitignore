@@ -1,0 +1,5 @@
+/server/config/env
+/bin
+/node_modules
+/logs/error.log
+package-lock.json

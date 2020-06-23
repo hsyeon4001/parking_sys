@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <style>
+
+
+h3 {
+  font-family: 'Oswald', sans-serif;
+  font-weight:normal;
+  font-size:40px;
+  color:#34495e;
+  text-align:center;
+  margin:0 auto 30px 0;
+}
+
+h3:first-letter {
+  color:#e74c3c;
+  border-bottom:1px solid #e74c3c;
+}
+
+h5 {
+  font-family: 'Oswald', sans-serif;
+  text-align:center;
+}
+
+.movingCar {
+  width: auto; 
+  height: auto;
+  max-width: 100px;
+  max-height: 100px;
+  display : block ;
+  margin : 0 auto ;
+}
+
+.form {
+  width: 400px;
+  height: 550px;
+  background: #edeff1;
+  margin: 0px auto;
+  padding-top: 20px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+label {
+  float:left;
+  padding: 13px 20px 13px 35px;
+}
+
+input[type="text"] {
+  display: block;
+  width: 230px;
+  height: 35px;
+  margin: 13px auto;
+  background: #fff;
+  border: 0px;
+  padding: 5px;
+  font-size: 16px;
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+input[type="submit"] {
+  display: block;
+  background: #1abc9d;
+  width: 314px;
+  padding: 12px;
+  cursor: pointer;
+  color: #fff;
+  border: 0px;
+  margin: auto ;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background: #09cca6
+}
+
+a {
+  text-align: center;
+  font-family: Arial;
+  color: gray;
+  display: block;
+  margin: 15px auto;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 12px;
+}
+
+a:hover {
+  color: #1abc9d;
+}
+
+
+::-webkit-input-placeholder {
+  color: gray;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: gray;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: gray;  
+}
+
+:-ms-input-placeholder {  
+  color: gray;  
+}
+
+.select_box {
+  position: relative;
+  margin: 0px 0px 30px 20px;
+  float: left;
+  width: 242px;
+  height: 35px;
+}
+
+.select_box:after {
+  content: '>';
+  font: 17px "Consolas", monospace;
+  color:#34495e;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  right: 11px;
+  top: 15px;
+  padding: 0 0 2px;
+  border-bottom: 1px solid #999;
+  position: absolute;
+  pointer-events: none;
+}
+
+.select_box select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: 50px;
+  float: right;
+  padding: 0px 11px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color:#34495e;
+  border: 0px;
+  -ms-word-break: normal;
+  word-break: normal;
+  border-radius: 5px;
+}
+    </style>
+  </head>
+  <body>
+    <h3><%= title %></h3>
+    <div class="form">
+      <form action="/out?_method=PUT" method="POST">
+        <label for="number">차량번호</label><input type="text" value="<%= number %>" readonly name="number" id="number">
+        <label for="in_time">입차시간</label><input type="text" value="<%= in_time %>" readonly id="in_time">
+        <label for="parking_time">주차시간</label><input type="text" value="<%= parking_time %>분" readonly id="parking_time">
+        <label for="paid_fee">주차요금</label><input type="text" value="<%= fee %>원" readonly name="paid_fee" id="paid_fee">
+        <label for="paid_type">결제방식</label>
+        <div class="select_box">
+          <select name="paid_type" id="paid_type">
+            <option value="card">카드</option>
+            <option value="cash">현금</option>
+          </select>
+        </div>
+        <input type="submit" value="정산!">    
+      </form>
+      <div class="img-div">
+        <h5>↓ Click! ↓</h5>
+        <img src="/movingCar.gif" onclick="location.href='http://localhost:3001'" class="movingCar" alt="">
+      </div>
+    </div>
+  </body>
+</html>
